@@ -1,0 +1,57 @@
+# Week 10: Lab Environment Setup & Network Hardening
+
+In this lab, I document how I built a professional-grade cybersecurity home lab using real computers and virtual machines. The goal is to simulate a secure enterprise network that can be used for malware analysis, penetration testing, monitoring, and Security+ certification labs.
+
+## 💻 Hardware Setup
+
+- **VMware ESXi Server (on bare metal)**
+  - Hosts all virtual machines and firewall instances
+  - Accessed via VMware vSphere or Fusion
+
+- **Computer 1 (Workstation)**
+  - OS: Windows 10 Pro
+  - Used for SIEM log monitoring, Splunk interface, and testing attacks
+
+- **Computer 2 (Security Analyst Station)**
+  - OS: Ubuntu Linux
+  - Used to run tools like Nmap, Wireshark, and Snort
+
+- **Computer 3 (Simulated End User)**
+  - OS: Windows 11 Home
+  - Used for phishing test, endpoint behavior, and victim simulation
+
+## 🧱 Network Setup
+
+- **pfSense Firewall (VM)**
+  - Segments the network into zones (internal, DMZ, WAN)
+  - Provides firewall rules, DNS filtering, and logging
+
+- **Virtual Machines in VMware**
+  - Metasploitable2: vulnerable Linux target
+  - Kali Linux: for penetration testing
+  - Security Onion: IDS and NSM platform
+  - Windows Server 2019: domain controller + file server
+
+## 🧰 Software Stack
+
+- **Monitoring & Security**
+  - Splunk (SIEM)
+  - Wazuh (Endpoint Detection)
+  - Snort (IDS/IPS)
+  - Security Onion (Network Security Monitoring)
+
+- **Offensive Testing**
+  - Nmap, Hydra, Burp Suite
+  - Metasploit
+  - Wireshark
+
+- **Hardening Tools**
+  - CIS Benchmarks
+  - Group Policy on Windows Server
+  - UFW/iptables for Linux
+
+## 🎯 Lab Focus
+
+- Demonstrate how to segment and secure a lab network
+- Prepare the environment to simulate real-world attacks and defenses
+- Document setup for hiring managers and certification auditors
